@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGrowth exercise</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      rel="stylesheet">
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+
+    <div class="container card mt-5" id="users-table" style="overflow-x:auto;">
+    </div>
+    <div class="container card flex-between mt-2">
+      <input type="text" class="input" id="txt_search" onkeyup="filter()"
+        placeholder="Filtrer utilisateurs">
+      <button class="btn" id="open-modal-btn">Ajouter utilisateur</button>
+    </div>
+
+    <!--modal-->
+    <div id="overlay"></div>
+    <div id="modal" class="card">
+      <h3 class="form-title">Ajout d'utilisateurs</h3>
+      <form class="flex-container">
+        <div class="flex-col ">
+          <div>
+            <label class="label-text" for="lastname">Nom</label><br>
+            <input class="input" type="text" id="lastName" name="lastname"
+              placeholder="Nom">
+            <span class="errorSpan"></span>
+          </div>
+
+          <div>
+            <label class="label-text" for="username">Nom d'utilisateur</label>
+            <br>
+            <input class="input" type="text" id="userName" name="username"
+              placeholder="Nom d'utilisateur">
+            <span class="errorSpan"></span>
+          </div>
+
+          <div>
+            <label class="label-text" for="matricule">Matricule</label> <br>
+            <input class="input" type="text" id="code" name="matricule"
+              placeholder="Matricule">
+
+          </div>
+        </div>
+
+        <div class="flex-col ">
+          <div>
+            <label class="label-text" for="firstname">Prénom</label> <br>
+            <input class="input" type="text" id="firstName" name="firstname"
+              placeholder="Prénom">
+            <span class="errorSpan"></span>
+          </div>
+          <div>
+            <label class="label-text" for="creadate">Date de
+              création</label><br>
+            <input class="datepicker input" type="date" id="creaDate"
+              name="creadate" placeholder="JJ/MM/AAAA">
+          </div>
+        </div>
+
+        <div class="flex-col ">
+          <div>
+            <label class="label-text" for="etat">Etat</label> <br>
+            <select class="custom-select input" name="status" id="status"
+              placeholder="Status">
+              <option selected="true" value="on-validation">En validation
+              </option>
+              <option value="valide">Validé</option>
+              <option value="rejected">Rejeté</option>
+            </select>
+          </div>
+        </div>
+
+      </form>
+      <div class="flex-end">
+        <button onclick="addUser()" class="btn mr-5">Enregistrer</button>
+      </div>
+    </div>
+    <!--modal-->
+  </body>
+
+</html>

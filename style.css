@@ -1,0 +1,257 @@
+* {
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+}
+
+/*=== layouts and containers ==*/
+.container {
+	width: 100vw;
+	max-width: 80%;
+	padding: 2rem;
+	margin: 0 auto;
+}
+.flex-container {
+	width: 100vw;
+	max-width: 90%;
+	padding: 0.5rem;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 2rem;
+}
+
+#modal {
+	display: none;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid black;
+	padding: 2rem;
+	background-color: white;
+}
+
+#overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(70, 70, 70, 0.639);
+}
+/*===================*/
+
+/*===  elemtents & uis ===*/
+.card {
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(106, 100, 100, 0.5);
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	overflow: hidden;
+	table-layout: fixed;
+	min-width: 300px;
+}
+
+tr {
+	border-top: 2px solid grey;
+	height: 2.5rem;
+}
+table th {
+	font-size: 0.85em;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+table caption {
+	font-size: 1.5em;
+	margin: 0.5em 0 0.75em;
+}
+
+#modal.open {
+	display: block;
+	width: 60vw;
+}
+
+#overlay.open {
+	display: block;
+}
+
+.btn {
+	padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+	color: black;
+	background-color: #fdb64d;
+	border-radius: 8px;
+	font-size: 1rem;
+}
+
+/*===================*/
+
+/*===  utility classes ===*/
+
+.flex-end {
+	display: flex;
+	justify-content: end;
+	margin-top: 1rem;
+}
+
+.text-start {
+	text-align: start;
+}
+
+.mt-5 {
+	margin-top: 5rem;
+}
+
+.mt-2 {
+	margin-top: 2rem;
+}
+
+.mr-5 {
+	margin-right: 5rem;
+}
+
+.errorBorder {
+	border: 2px solid red;
+}
+
+.errorSpan {
+	color: red;
+}
+
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.label-text {
+	color: grey;
+	font-weight: 400;
+}
+
+.input {
+	margin-top: 0.5rem;
+	padding: 0.4rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.datepicker {
+	border-radius: 3px;
+	margin-top: 0.5rem;
+	padding: 0.4rem 2.2rem 0.4rem 2.2rem;
+}
+
+.form-title {
+	font-weight: bolder;
+	font-size: 1.3rem;
+}
+
+.no-border {
+	border: none;
+}
+
+.hiddenbtn {
+	background-color: transparent;
+	border: none;
+}
+.custom-select {
+	padding: 0.3rem 1.8rem 0.3rem 1.8rem;
+	background-color: white;
+}
+
+.badge {
+	padding: 0.2rem;
+}
+.text-end {
+	text-align: start;
+}
+
+.valide,
+.Validé {
+	background-color: #5be881;
+	opacity: 80%;
+}
+
+.rejected,
+.Rejeté {
+	background-color: #ff0000;
+	opacity: 80%;
+}
+
+.on-validation,
+.validation {
+	background-color: #fdb64d;
+}
+
+/*=== media queries  ===*/
+table th {
+	display: none;
+	padding: 1em;
+}
+table th:first-child {
+	display: table-cell;
+}
+
+table th:nth-child(2) span {
+	display: none;
+}
+
+table td {
+	display: block;
+}
+table td:first-child {
+	display: table-cell;
+}
+
+table th,
+table td {
+	margin: 0.5em 1em;
+}
+
+@media (min-width: 480px) {
+	table th:nth-child(2) span {
+		display: block;
+	}
+	table th:nth-child(2):after {
+		display: none;
+	}
+	table th,
+	table td {
+		display: table-cell;
+		padding: 1em;
+	}
+	.badge {
+		padding: 0.2rem 2rem 0.2rem 2rem;
+		border-radius: 8px;
+	}
+	.text-end {
+		text-align: end;
+	}
+
+	.flex-container {
+		width: 100vw;
+		max-width: 90%;
+		padding: 0.5rem;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.form-title {
+		margin-left: 4rem;
+		font-weight: bolder;
+		font-size: 2rem;
+	}
+}
