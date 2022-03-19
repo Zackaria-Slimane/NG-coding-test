@@ -38,6 +38,8 @@ let codeInput = document.querySelector("#code");
 let creationDate = document.querySelector("#creaDate");
 let statusInput = document.querySelector("#status");
 
+// takes inputs values and creates a new user object to add to the global users list
+// if firstname | lastname are empty user cannot be added
 function addUser() {
 	let newUser = {
 		id: 23425 + generateID(),
@@ -62,6 +64,7 @@ function addUser() {
 	}
 }
 
+//dynamicly fills the table headers
 function fillHeader() {
 	let tableHeaders = [
 		"ID",
@@ -142,6 +145,7 @@ function fillTable(user) {
 	body.append(newRow);
 }
 
+// takes the users list and draw the table with a row for each user
 function drawTable() {
 	tableDiv.innerHTML = "";
 	fillHeader();
@@ -150,6 +154,7 @@ function drawTable() {
 	});
 }
 
+//helper functions
 function getDate() {
 	let date = new Date();
 	let day = date.getDay();
